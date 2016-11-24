@@ -7,6 +7,30 @@
 
 #include"comm.h"
 
+typedef struct player_info  //玩家的信息
+{
+    struct sockaddr_in *ip_port;
+    char playe_name[256];
+	int  integral; //玩家积分   初始为0   胜一局加1  败一局减1
+}player_info;
+
+typedef struct message
+{
+	player_info *player;//发的信息来自哪个玩家
+    char msg[1];  //所发信息
+};
+
+typedef struct game //两个对战玩家的出招
+{
+	int playerA;
+	int playerB;
+};
+
+
+
+
+
+
 
 #define ERR_EXIT(m) \
         do \
